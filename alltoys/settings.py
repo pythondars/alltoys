@@ -25,7 +25,7 @@ SECRET_KEY = 'y03b&4%!p&v9lz5520&k20l@0k)c_q4cl-k@y_&lhp$-g7usjf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1", "toys.pythonanywhere.com"]
 
 
 # Application definition

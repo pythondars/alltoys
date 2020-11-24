@@ -1,5 +1,5 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def dashboard(request):
-    return HttpResponse("Welcome to AllToys!")
+    return render(request, "toys/dashboard.html", context={"welcome_text": "Welcome to Alltoys!"})

@@ -12,5 +12,11 @@ class User(models.Model):
     last_name = models.CharField(max_length=50)
     age = models.IntegerField()
 
+    objects = models.Manager()
     active_objects = ActiveObjectsManager()
 
+
+class Toy(models.Model):
+    name = models.CharField(max_length=100)
+    user = models.ForeignKey(User, related_name="toys", on_delete=models.CASCADE, null=True, blank=True)
+    description = models.TextField(null=True, blank=True)

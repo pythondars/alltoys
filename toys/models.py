@@ -6,6 +6,13 @@ class ActiveObjectsManager(models.Manager):
         return super().get_queryset().filter(is_active=True)
 
 
+class BaseModel(models.Model):
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        abstract = True
+
+
 class Address(models.Model):
     street = models.CharField(max_length=100)
     city = models.CharField(max_length=100, null=True, blank=True)
@@ -13,8 +20,7 @@ class Address(models.Model):
     country = models.CharField(max_length=100, null=True, blank=True)
 
 
-class User(models.Model):
-    is_active = models.BooleanField(default=True)
+class User(BaseModel):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50, null=True, blank=True)
     email = models.EmailField(max_length=100, null=True, blank=True)
@@ -26,12 +32,12 @@ class User(models.Model):
     active_objects = ActiveObjectsManager()
 
 
-class Tag(models.Model):
+class Tag(BaseModel):
     name = models.CharField(max_length=100)
     description = models.TextField(null=True, blank=True)
 
 
-class Toy(models.Model):
+class Toy(BaseModel):
     name = models.CharField(max_length=100)
     user = models.ForeignKey(User, related_name="toys", on_delete=models.CASCADE, null=True, blank=True)
     description = models.TextField(null=True, blank=True)

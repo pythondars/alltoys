@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from toys.models import Toy, Tag, User
+
+admin.site.register(Toy)
+admin.site.register(Tag)
+admin.site.register(User)

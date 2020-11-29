@@ -21,6 +21,13 @@
         <tr>
         <td>{{ forloop.counter }}</td>
         <td>{{ toy.name }}</td>
+        <td>{{ toy.user.email }}</td>
+        <td>
+          {% for tag in toy.tags.all %}
+          {{ tag.name }}
+          {% endfor %}
+
+        </td>
         </tr>
       {% endfor %}
 

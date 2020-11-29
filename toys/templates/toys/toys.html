@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Alltoys - dashboard</title>
+</head>
+<body>
+  <div>
+    All toys
+  </div>
+  <div>
+    <table>
+      <tr>
+        <td style="width: 100px"><a href="{% url "toys:toys" %}">Toys</a></td>
+        <td style="width: 100px"><a href="#">Users</a></td>
+      </tr>
+    </table>
+    <hr>
+    <table>
+      {% for toy in toys %}
+        <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ toy.name }}</td>
+        </tr>
+      {% endfor %}
+
+    </table>
+    <hr>
+    <table>
+      {% for toy in toys %}
+        <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ toy.name }}</td>
+        </tr>
+      {% endfor %}
+
+    </table>
+  </div>
+
+</body>
+</html>

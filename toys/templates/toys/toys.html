@@ -20,7 +20,8 @@
       {% for toy in toys %}
         <tr>
         <td>{{ forloop.counter }}</td>
-        <td>{{ toy.name }}</td>
+        <td>{{ toy.id }}</td>
+        <td><a href="{% url "toys:toy_detail" toy.id %}">{{ toy.name }}</a></td>
         <td>{{ toy.user.email }}</td>
         <td>
           {% for tag in toy.tags.all %}

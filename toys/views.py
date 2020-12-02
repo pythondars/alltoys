@@ -1,11 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.urls import reverse
 from django.utils import timezone
+from django.views.generic import TemplateView, CreateView, UpdateView
 
+from toys.forms import ToyForm
 from toys.models import Toy
 
 
-def dashboard(request):
-    return render(request, "toys/dashboard.html", context={"welcome_text": "Welcome to Alltoys!"})
+class DashboardView(TemplateView):
+    template_name = "toys/dashboard.html"
+    extra_context = {"welcome_text": "Welcome to Alltoys!"}
 
 
 def get_toys(request):
@@ -15,3 +19,12 @@ def get_toys(request):
     toys = toys.prefetch_related("tags")
 
     return render(request, "toys/toys.html", context={"toys": toys})
+
+
+def get_toy_detail(request, **kwargs):
+    try:
+        toy = Toy.objects.get(pk=kwargs.get("id"))
+    except Toy.DoesNotExist:
+        return redirect("toys:toys")
+    return render(request, "toys/toy_detail.html", context={"toy": toy})
+

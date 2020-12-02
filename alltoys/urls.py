@@ -16,9 +16,11 @@ Including another URLconf
 import debug_toolbar
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import RedirectView
 
 urlpatterns = [
-    path('', include(('toys.urls', 'toys'))),
+    path('', include('toys.urls', namespace="toys")),
+    path('dashboard/', RedirectView.as_view(url="/")),
     path('admin/', admin.site.urls),
     path('__debug__/', include(debug_toolbar.urls)),
 ]

@@ -1,9 +1,7 @@
-from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.utils import timezone
-from django.views.generic import TemplateView, CreateView, UpdateView
+from django.views.generic import TemplateView, ListView, DetailView, CreateView
 
-from toys.forms import ToyForm
 from toys.models import Toy
 
 
@@ -12,19 +10,24 @@ class DashboardView(TemplateView):
     extra_context = {"welcome_text": "Welcome to Alltoys!"}
 
 
-def get_toys(request):
-    toys = Toy.objects.all()
-    toys = toys.filter(created_at__year=timezone.now().year)
-    toys = toys.select_related("user")
-    toys = toys.prefetch_related("tags")
+class ToysListView(ListView):
+    model = Toy
+    template_name = "toys/toys.html"
+    queryset = Toy.objects.filter()
 
-    return render(request, "toys/toys.html", context={"toys": toys})
+    def get_queryset(self):
+        toys = Toy.objects.filter(created_at__year=timezone.now().year)
+        toys = toys.select_related("user")
+        toys = toys.prefetch_related("tags")
+
+        return toys
 
 
-def get_toy_detail(request, **kwargs):
-    try:
-        toy = Toy.objects.get(pk=kwargs.get("id"))
-    except Toy.DoesNotExist:
-        return redirect("toys:toys")
-    return render(request, "toys/toy_detail.html", context={"toy": toy})
+class ToyDetailView(DetailView):
+    model = Toy
+    template_name = "toys/toy_detail.html"
 
+
+class ToyCreateView(CreateView):
+    model = Toy
+    fields = ["name", "description", "price"]

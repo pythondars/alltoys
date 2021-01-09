@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                    aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.svg" alt="logo">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item nav-item-search active">
+                        <div class="input-group mb-3">
+                            <input type="search" class="form-control" placeholder="Search" aria-label="Username"
+                                   aria-describedby="basic-addon1">
+                            <div class="input-group-append">
+                            <span class="icon icon-search">
+
+                            </span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="navbar-nav my-2 my-lg-0">
+                    <li class="nav-item active">
+                        <a type="button" href="add-toy.html" class="add-btn font-family-light">Add a toy</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="font-family-light" data-toggle="modal"
+                                data-target="#signUpModal"
+                                data-backdrop="static" data-keyboard="false">Sign up
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="font-family-light" data-toggle="modal"
+                                data-target="#logInModal"
+                                data-backdrop="static" data-keyboard="false">Log In
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <span class="icon icon-bag"></span>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 offset-lg-5">
+                    <ul class="list-group list-group-horizontal float-right">
+                        <li class="list-group-item">
+                            <h5 class="font-weight-bold">Sort by:</h5>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="">free</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="">paid</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="" class="active">new</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="">old</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="">for girls</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="">for boys</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="data-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-6">
+                <div class="card h-100 border-0">
+                    <div class="img-div">
+                        <img data-toggle="modal"
+                             data-target="#toyInfoModal"
+                             data-backdrop="static" data-keyboard="false" class="card-img-top" src="images/bear.png"
+                             alt="Card image cap">
+                        <div data-toggle="modal"
+                             data-target="#toyInfoModal"
+                             data-backdrop="static" data-keyboard="false"
+                             class="overlay d-flex justify-content-center align-items-end">
+                            <h3 class="font-family-bold">Brown Bear</h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <img class="owner-img" src="images/man.png" alt="owner-img">
+                            <h5 class="font-family-bold">George M.</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div class="card h-100 border-0">
+                    <div class="img-div">
+                        <img data-toggle="modal"
+                             data-target="#toyInfoModal"
+                             data-backdrop="static" data-keyboard="false" class="card-img-top" src="images/doll.png" alt="Card image cap">
+                        <div data-toggle="modal"
+                             data-target="#toyInfoModal"
+                             data-backdrop="static" data-keyboard="false" class="overlay d-flex justify-content-center align-items-end">
+                            <h3 class="font-family-bold">Brown Bear</h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <img class="owner-img" src="images/default-img.png" alt="owner-img">
+                            <h5 class="font-family-bold">George M.</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div class="card h-100 border-0">
+                    <div class="img-div">
+                        <img data-toggle="modal"
+                             data-target="#toyInfoModal"
+                             data-backdrop="static" data-keyboard="false" class="card-img-top" src="images/bear.png"
+                             alt="Card image cap">
+                        <div data-toggle="modal"
+                             data-target="#toyInfoModal"
+                             data-backdrop="static" data-keyboard="false"
+                             class="overlay d-flex justify-content-center align-items-end">
+                            <h3 class="font-family-bold">Brown Bear</h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <img class="owner-img" src="images/man.png" alt="owner-img">
+                            <h5 class="font-family-bold">George M.</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div class="card h-100 border-0">
+                    <div class="img-div">
+                        <img data-toggle="modal"
+                             data-target="#toyInfoModal"
+                             data-backdrop="static" data-keyboard="false" class="card-img-top" src="images/doll.png" alt="Card image cap">
+                        <div data-toggle="modal"
+                             data-target="#toyInfoModal"
+                             data-backdrop="static" data-keyboard="false" class="overlay d-flex justify-content-center align-items-end">
+                            <h3 class="font-family-bold">Brown Bear</h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <img class="owner-img" src="images/default-img.png" alt="owner-img">
+                            <h5 class="font-family-bold">George M.</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div class="card h-100 border-0">
+                    <div class="img-div">
+                        <img data-toggle="modal"
+                             data-target="#toyInfoModal"
+                             data-backdrop="static" data-keyboard="false" class="card-img-top" src="images/bear.png"
+                             alt="Card image cap">
+                        <div data-toggle="modal"
+                             data-target="#toyInfoModal"
+                             data-backdrop="static" data-keyboard="false"
+                             class="overlay d-flex justify-content-center align-items-end">
+                            <h3 class="font-family-bold">Brown Bear</h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <img class="owner-img" src="images/man.png" alt="owner-img">
+                            <h5 class="font-family-bold">George M.</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div class="card h-100 border-0">
+                    <div class="img-div">
+                        <img data-toggle="modal"
+                             data-target="#toyInfoModal"
+                             data-backdrop="static" data-keyboard="false" class="card-img-top" src="images/doll.png" alt="Card image cap">
+                        <div data-toggle="modal"
+                             data-target="#toyInfoModal"
+                             data-backdrop="static" data-keyboard="false" class="overlay d-flex justify-content-center align-items-end">
+                            <h3 class="font-family-bold">Brown Bear</h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <img class="owner-img" src="images/default-img.png" alt="owner-img">
+                            <h5 class="font-family-bold">George M.</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div class="card h-100 border-0">
+                    <div class="img-div">
+                        <img data-toggle="modal"
+                             data-target="#toyInfoModal"
+                             data-backdrop="static" data-keyboard="false" class="card-img-top" src="images/bear.png"
+                             alt="Card image cap">
+                        <div data-toggle="modal"
+                             data-target="#toyInfoModal"
+                             data-backdrop="static" data-keyboard="false"
+                             class="overlay d-flex justify-content-center align-items-end">
+                            <h3 class="font-family-bold">Brown Bear</h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <img class="owner-img" src="images/man.png" alt="owner-img">
+                            <h5 class="font-family-bold">George M.</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div class="card h-100 border-0">
+                    <div class="img-div">
+                        <img data-toggle="modal"
+                             data-target="#toyInfoModal"
+                             data-backdrop="static" data-keyboard="false" class="card-img-top" src="images/doll.png" alt="Card image cap">
+                        <div data-toggle="modal"
+                             data-target="#toyInfoModal"
+                             data-backdrop="static" data-keyboard="false" class="overlay d-flex justify-content-center align-items-end">
+                            <h3 class="font-family-bold">Brown Bear</h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <img class="owner-img" src="images/default-img.png" alt="owner-img">
+                            <h5 class="font-family-bold">George M.</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2 offset-lg-5 text-center">
+                <button>
+                    Show more
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+
+</footer>
+
+<div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title font-family-bold" id="signUpModalLabel">
+                    Sign Up
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputName1">Name</label>
+                        <input type="text" class="form-control" id="exampleInputName1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleEmailOrTel">E-mail or mobile number:</label>
+                        <input type="text" class="form-control" id="exampleEmailOrTel">
+                    </div>
+                    <div class="form-group">
+                        <label for="examplePassword1">Password</label>
+                        <input type="password" class="form-control" id="examplePassword1">
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">
+                            I accept the <a href="">Terms of Use</a> and <a href="">Privacy Policy</a>
+                        </label>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="submit mt">
+                            Sign Up
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <h6 class="text-center w-100">or Sign Up with</h6>
+                <div class="d-flex w-100">
+                    <ul>
+                        <li>
+                            <a href="">
+                                <img src="images/icons/facebook.svg" alt="facebook">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="images/icons/google.svg" alt="google">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="images/icons/apple.svg" alt="apple">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="logInModal" tabindex="-1" role="dialog" aria-labelledby="logInModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title font-family-bold" id="logInModalLabel">
+                    Log In
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleEmailOrTel2">E-mail or mobile number:</label>
+                        <input type="text" class="form-control" id="exampleEmailOrTel2">
+                    </div>
+                    <div class="form-group">
+                        <label for="examplePassword12">Password</label>
+                        <input type="password" class="form-control" id="examplePassword12">
+                    </div>
+                    <div class="text-center">
+                        <a href="" class="float-left">
+                            Forgot password?
+                        </a>
+                        <button type="submit" class="submit float-right mt-0">
+                            Log In
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <h6 class="text-center w-100">or Log In with</h6>
+                <div class="d-flex w-100">
+                    <ul>
+                        <li>
+                            <a href="">
+                                <img src="images/icons/facebook.svg" alt="facebook">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="images/icons/google.svg" alt="google">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="images/icons/apple.svg" alt="apple">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="my-modal modal left fade" id="toyInfoModal" tabindex="" role="dialog" aria-labelledby="toyInfoModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog info-toy-modal" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="float-left">
+                            <button type="button" class="close" data-dismiss="modal">&times;</span>
+                            </button>
+                        </div>
+                        <div class="float-right">
+                            <a href="toy-page.html">
+                                Open a new window
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card h-100 border-0">
+                            <div class="img-div">
+                                <img class="card-img-top" src="images/bear.png" alt="Card image cap">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 post-box">
+                        <h4 class="font-family-bold">
+                            Brown Bear
+                        </h4>
+                        <p class="mt-lg-4 mt-2">
+                            So perhaps, you've generated some fancy text, and you're content that you can now copy and
+                            paste your fancy text in the comments section of funny cat videos, but perhaps
+
+                        </p>
+                        <button class="w-100 mt-lg-5 mt-2">
+                            Write a message
+                        </button>
+                        <h5>or call to</h5>
+                        <h3>+1 909 090 90 00</h3>
+
+                        <div class="extra-info pt-3">
+                            <h6 class="font-family-bold">
+                                George’s other posts
+                            </h6>
+                            <h6>
+                                <a href="">
+                                    <u>
+                                        Black bear free
+                                    </u>
+                                </a>
+                            </h6>
+                            <h6>
+                                <a href="">
+                                    <u>
+                                        Pikachu
+                                    </u>
+                                </a>
+                            </h6>
+                            <h6>
+                                <a href="">
+                                    <u>
+                                        Lego toy 2 package
+                                    </u>
+                                </a>
+                            </h6>
+                            <h6>
+                                <a href="">
+                                    <u>
+                                        Cars and barbie
+                                    </u>
+                                </a>
+                            </h6>
+                            <h6>
+                                <a href="">
+                                    <u>
+                                        Brown potate from Toy Story
+                                    </u>
+                                </a>
+                            </h6>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="js/jquery-3.3.1.slim.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</html>

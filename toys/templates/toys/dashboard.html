@@ -1,22 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Alltoys - dashboard</title>
-</head>
-<body>
-  <div>
-    {{ welcome_text }}
-  </div>
-  <div>
-    <table>
-      <tr>
-        <td style="width: 100px"><a href="{% url "toys:toys" %}">Toys</a></td>
-        <td style="width: 100px"><a href="#">Users</a></td>
-      </tr>
-    </table>
-    <hr>
-  </div>
+{% extends "toys/layout.html" %}
 
-</body>
-</html>
+{% block page_title %}
+Alltoys - dashboard
+{% endblock %}
+
+{% block page_header %}
+    {{ welcome_text }}
+{% endblock %}
+
+{% block page_content %}
+  Welcome to All toys dashboard!
+{% endblock %}

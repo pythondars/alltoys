@@ -1,3 +1,4 @@
+{% load toys_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,19 +30,14 @@
           {% endfor %}
 
         </td>
+        <td>{{ toy.created_at|date:"Y-m-d" }}</td>
         </tr>
       {% endfor %}
 
     </table>
     <hr>
     <table>
-      {% for toy in toys %}
-        <tr>
-        <td>{{ forloop.counter }}</td>
-        <td>{{ toy.name }}</td>
-        </tr>
-      {% endfor %}
-
+      {% render_toy_list object_list %}
     </table>
   </div>
 

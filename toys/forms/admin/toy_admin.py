@@ -1,14 +1,6 @@
 from django import forms
 
-from toys.models import Toy, User
-
-
-class UserAdminForm(forms.ModelForm):
-    email = forms.EmailField(label="User email", required=True)
-
-    class Meta:
-        model = User
-        fields = "__all__"
+from toys.models import Toy
 
 
 class ToyAdminForm(forms.ModelForm):

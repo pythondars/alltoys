@@ -1,0 +1,20 @@
+{% extends "toys/layout.html" %}
+
+{% block page_title %}
+Login to All toys
+{% endblock %}
+
+{% block page_header %}
+{% endblock %}
+
+{% block page_nav_bar %}
+{% endblock %}
+
+{% block page_content %}
+  <h3>Sign in</h3>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+{% endblock %}

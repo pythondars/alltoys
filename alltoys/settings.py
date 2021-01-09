@@ -55,6 +55,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'alltoys.urls'
+APPEND_SLASH = True
 
 TEMPLATES = [
     {

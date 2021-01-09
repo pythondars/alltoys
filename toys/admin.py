@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect
 from django.utils.html import format_html
 from django.utils.translation import gettext_lazy as _
 
-from toys.forms import UserAdminForm
+from toys.forms.admin.user_admin import UserAdminForm
 from toys.models import Toy, Tag, User, Address
 from toys.services.send_weekly_report import send_weekly_toys_count
 

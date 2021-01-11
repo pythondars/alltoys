@@ -39,23 +39,11 @@ def send_weekly_email_report(modeladmin, request, queryset):
 
 
 @admin.register(User)
-class UserAdmin(UserAdmin):
+class UserAdmin(admin.ModelAdmin):
     list_display = ("first_name", "last_name", "email", "phone", "password_change_link")
-    actions_on_bottom = True
-    date_hierarchy = "created_at"
-    empty_value_display = "-"
-    readonly_fields = ("password_change_link",)
-    form = UserAdminForm
-    fieldsets = (
-        (None, {'fields': ('username', 'password', "password_change_link")}),
-        (_('Personal info'), {'fields': ('first_name', 'last_name', 'email')}),
-        (_('Permissions'), {
-            'fields': ('is_active', 'is_staff', 'is_superuser'),
-        }),
-        (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
-    )
-    inlines = [UserToysInline]
-    actions = [send_weekly_email_report]
+    search_fields = ("first_name", "last_name", "email")
+    readonly_fields = ("password",)
+
 
     def password_change_link(self, obj):
         return format_html(f'<a href="/admin/toys/user/{obj.pk}/password/">Change Password</a>')

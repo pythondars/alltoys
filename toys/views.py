@@ -1,31 +1,22 @@
 from django.contrib.auth import login
 from django.contrib.auth.views import LogoutView
 from django.shortcuts import redirect, render, resolve_url
-from django.utils import timezone
 from django.views import View
-from django.views.generic import TemplateView, ListView, DetailView
+from django.views.generic import DetailView
 
 from toys.forms.toy import ToyModelForm
 from toys.forms.user import LoginForm
 from toys.models import Toy
 
 
-class DashboardView(TemplateView):
-    template_name = "toys/dashboard.html"
-    extra_context = {"welcome_text": "Welcome to Alltoys!"}
-
-
-class ToysListView(ListView):
-    model = Toy
+class ToysListView(View):
     template_name = "toys/toys.html"
-    queryset = Toy.objects.filter()
 
-    def get_queryset(self):
-        toys = Toy.objects.filter(created_at__year=timezone.now().year)
-        toys = toys.select_related("user")
-        toys = toys.prefetch_related("tags")
-
-        return toys
+    def get(self, request, *args, **kwargs):
+        toys = Toy.objects.all()
+        return render(request, self.template_name, context={
+            "toys": toys,
+        })
 
 
 class ToyDetailView(DetailView):

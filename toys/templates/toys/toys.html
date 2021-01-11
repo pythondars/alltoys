@@ -1,45 +1,46 @@
-{% load toys_tags %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Alltoys - dashboard</title>
-</head>
-<body>
-  <div>
-    All toys
-  </div>
-  <div>
-    <table>
-      <tr>
-        <td style="width: 100px"><a href="{% url "toys:toys" %}">Toys</a></td>
-        <td style="width: 100px"><a href="#">Users</a></td>
-      </tr>
-    </table>
-    <hr>
-    <table>
-      {% for toy in object_list %}
-        <tr>
-        <td>{{ forloop.counter }}</td>
-        <td>{{ toy.id }}</td>
-        <td><a href="{% url "toys:toy_detail" toy.id %}">{{ toy.name }}</a></td>
-        <td>{{ toy.user.email }}</td>
-        <td>
-          {% for tag in toy.tags.all %}
-          {{ tag.name }}
-          {% endfor %}
+{% extends 'toys/layout.html' %}
+{% load static %}
 
-        </td>
-        <td>{{ toy.created_at|date:"Y-m-d" }}</td>
-        </tr>
-      {% endfor %}
-
-    </table>
-    <hr>
-    <table>
-      {% render_toy_list object_list %}
-    </table>
-  </div>
-
-</body>
-</html>
+{% block container %}
+    <div class="row">
+        {% for toy in toys %}
+        <div class="col-lg-3 col-6">
+            <div class="card h-100 border-0">
+                <div class="img-div">
+                    {% if toy.photo %}
+                    <img data-toggle="modal"
+                         data-target="#toyInfoModal"
+                         data-backdrop="static" data-keyboard="false" class="card-img-top" src="{{ toy.photo.url }}" alt="Card image cap">
+                    {% else %}
+                    <img data-toggle="modal"
+                         data-target="#toyInfoModal"
+                         data-backdrop="static" data-keyboard="false" class="card-img-top" src="{% static 'images/image-not-available.png' %}" alt="Card image cap">
+                    {% endif %}
+                    <div data-toggle="modal"
+                         data-target="#toyInfoModal"
+                         data-backdrop="static" data-keyboard="false" class="overlay d-flex justify-content-center align-items-end">
+                        <span class="font-family-bold toy_name">{{ toy.name }}</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex">
+                        {% if toy.user.photo %}
+                        <img class="owner-img" src="{{ toy.user.photo.url }}" alt="owner-img">
+                        {% else %}
+                        <img class="owner-img" src="{% static 'images/anonymous-user.png' %}" alt="owner-img">
+                        {% endif %}
+                        <span class="font-family-bold toy_owner_name" >{{ toy.user }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="row">
+        <div class="col-lg-2 offset-lg-5 text-center">
+            <button>
+                Show more
+            </button>
+        </div>
+    </div>
+{% endblock %}
